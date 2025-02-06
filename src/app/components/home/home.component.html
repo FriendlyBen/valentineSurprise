@@ -1,0 +1,27 @@
+<div class="main-layout" *ngIf="!isLoading">
+    <div class="normal">
+        <h1>This is a Valentine's Gift from Bentley to Garnette </h1>
+        <span>(She wanted me to write her a letter, I said Heck No; So here's something special :D )</span>
+    </div>
+    <span style="color: black; width: 100%; font-size: 10px;">Tap screen if you're not hearing anything!</span>
+    <div class="normal">
+        <h3>Here's a quiz I've prepared,  just for participants to understand more about her (or us) </h3>
+        <p>Don't forget to write your name before you start!</p>
+        <input [(ngModel)]="userName" placeholder="Enter your name">
+        <button [disabled]="!userName" (click)="start()">Start Quiz</button>  
+    </div>
+    <div class="put-images-here">
+        <img src="../../../assets/home/cynpic.jpeg" alt="CNY">
+        <img src="../../../assets/home/garselfie.jpeg" alt="garSelfie">
+        <img src="../../../assets/home/lombokselfie.jpeg" alt="lombok">
+    </div>
+</div>
+
+<div class="loading-layout" *ngIf="isLoading">
+    <h1>Alright <h1 style="color: white">{{this.userName}},</h1> Get Ready</h1>
+    <p>in</p>
+    <div class="countdown">
+        <h2>{{countdown}}</h2>
+    </div>
+</div>
+ 

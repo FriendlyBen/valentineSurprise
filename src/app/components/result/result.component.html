@@ -1,0 +1,31 @@
+<div *ngIf="score >= 8" style="color:rgb(63, 226, 63); display: flex; flex-direction: column;">
+    <h1>Congratulations, {{userName}}!</h1>
+    <h2>You got {{score}}/10</h2>
+</div>
+
+<div *ngIf="score < 8 && score >= 5" style="color:orange">
+    <h1>Not bad, {{userName}}!</h1>
+    <h2>You got {{score}}/10</h2>
+</div>
+
+<div *ngIf="score < 4" style="color:red">
+    <h1>Booo noob {{userName}}!</h1>
+    <h2>You got {{score}}/10 (bruh)</h2>
+</div>
+
+<div class="leaderboard">
+    <h2>Leaderboard</h2>
+    
+    <!-- Show spinner while loading -->
+    <div *ngIf="loading" class="spinner-container">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Show leaderboard once loading is complete -->
+    <ol *ngIf="!loading">
+        <li *ngFor="let user of topResults">{{user.username}} - {{user.score}} points</li>
+    </ol>
+</div>
+
+<button (click)="restartQuiz()">go to home</button>

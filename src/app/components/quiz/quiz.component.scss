@@ -1,0 +1,116 @@
+.main-layout {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 15px; /* Space between choices */
+    width: 100%;
+    height: 70%;
+    padding: 10px;
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8); /* Light background */
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.choice:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(255, 100, 150, 0.3);
+}
+
+.choice img {
+    width: 110px; /* Image size */
+    height: 110px;
+    object-fit:cover;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.choice p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color);
+}
+
+
+.timer {
+    height: 50px;
+}
+
+.question{
+    height: 20%;
+    width: 100%;
+}
+
+.timer {
+    width: 110px;
+    height: 100px;
+    background-color: var(--secondary-color); /* Default pink */
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* 👇 This class activates only when timer is ≤ 5 */
+.low-time {
+    background-color: red !important; /* Change to red */
+    animation: pulse 0.8s infinite alternate; /* Pulse effect */
+}
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.1); opacity: 0.8; }
+  }
+
+
+  /* Flash Overlay Layer (Stacked Above Everything) */
+.flash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000; /* Ensures it's on top */
+    background-color: transparent;
+    pointer-events: none; /* Allows clicks to pass through */
+    transition: background-color 0.1s ease-in-out;
+  }
+  
+  .correct {
+    background-color: rgba(0, 255, 0, 0.6); /* Green flash */
+  }
+  
+  .wrong {
+    background-color: rgba(255, 0, 0, 0.6); /* Red flash */
+  }
+  

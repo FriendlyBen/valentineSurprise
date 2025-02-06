@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+
+
+:root {
+    --primary-color: #ff99cc; /* Light Pink */
+    --secondary-color: #ff66b2; /* Bright Pink */
+    --background-gradient: linear-gradient(135deg, var(--primary-color), #ffffff); /* Pink to White Gradient */
+    --text-color: #ff4081; /* Vibrant Pink Text */
+    --button-color: #e7d800; /* Pinkish Red */
+    --button-hover: #ff3366;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Spicy Rice', sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(255, 100, 150, 0.3);
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    text-align: center;
+  }
+  
+  span {
+    color: var(--secondary-color);
+    text-align: center;
+  }
+
+  button {
+    background-color: var(--button-color); /* Pinkish Red */
+    color: white;
+    height: 5vh;
+    width: 15vw;
+    min-width: 120px;
+    border: 0;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-family: 'Spicy Rice', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  }
+  
+  button:disabled {
+    background-color: #b0b0b0; /* Grey */
+    cursor: not-allowed;
+    transform: scale(1); /* Prevents hover effects */
+  }

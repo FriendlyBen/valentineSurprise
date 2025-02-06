@@ -1,0 +1,20 @@
+<div class="flash-overlay" [ngClass]="flashColor"></div>
+
+<div class="main-layout">
+    <div class="timer" [ngClass]="{'low-time': isLowTime}">
+        <h2>{{timer}}</h2>
+    </div>
+    <div class="header">
+        <h2>Name: {{this.userName}}</h2>
+        <h2>Score: {{this.score}}/10</h2>
+    </div>
+    <div class="question" [@pulse]="currentQuestionIndex">
+        <h2 style="color:black">{{ quizes[currentQuestionIndex].q }}</h2>
+    </div>
+    <div class="choices">
+        <div *ngFor="let choice of quizes[currentQuestionIndex].c" class="choice" (click)="chooseAnswer(choice.ans)" [@pulse]="currentQuestionIndex">
+            <img [src]="choice.img" alt="Choice Image" [ngStyle]="{'object-fit': choice.ans === 'Her Eyes' ? 'contain' : 'cover'}" >
+            <p>{{ choice.ans }}</p>
+        </div>
+    </div>
+</div>

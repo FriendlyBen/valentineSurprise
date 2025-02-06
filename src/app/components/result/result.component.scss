@@ -1,0 +1,33 @@
+.leaderboard{
+    height:70%;
+    width: 100%;
+    background: rgb(221, 221, 31);
+    border-radius: 1.2rem;
+    margin-bottom: 1rem;
+    font-size: 22px;
+}
+
+.spinner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
