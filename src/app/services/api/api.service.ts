@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private backendUrl = 'http://localhost:5000'; // Change when deploying
+  private backendUrl = 'https://forgarnettebackend.onrender.com';
 
   constructor(private http: HttpClient) {}
 
